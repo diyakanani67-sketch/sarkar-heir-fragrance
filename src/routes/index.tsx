@@ -26,20 +26,21 @@ export const Route = createFileRoute("/")({
 const notes = [
   {
     tier: "Top",
-    label: "The Fresh Opening",
-    items: ["Bergamot Zest", "Pear Nectar", "Green Cardamom"],
+    label: "Fresh & Clean",
+    items: ["Bergamot Zest", "Lemon Leaf", "Green Cardamom"],
   },
   {
     tier: "Heart",
-    label: "The Calm Centre",
-    items: ["Mysore Sandalwood", "Honey Blossom", "White Iris"],
+    label: "Soft Honey",
+    items: ["Honey Blossom", "White Iris", "Orange Flower"],
   },
   {
     tier: "Base",
-    label: "The Long Trail",
-    items: ["Bourbon Vanilla", "Tonka Bean", "Warm Amber Musk"],
+    label: "Creamy & Warm",
+    items: ["Bourbon Vanilla", "Mysore Sandalwood", "Tonka Bean"],
   },
 ];
+
 
 const lineup = [
   {
@@ -86,13 +87,13 @@ function Index() {
               Heir
             </h1>
             <p className="mt-4 text-sm font-semibold tracking-[0.22em] uppercase">
-              Sweet. Serene. Everlasting.
+              Fresh. Calm. Subtly Sweet.
             </p>
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
-              It opens cold and clean, settles into creamy sandalwood, and stays for the
-              rest of the day as vanilla, honey and soft amber. The calm that comes after
-              the power.
+              A fresh touch of honey melts into creamy vanilla and warm sandalwood,
+              creating a calm sweetness that stays with you.
             </p>
+
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <span className="border border-primary/20 bg-background/60 px-3 py-1.5 text-[10px] font-semibold tracking-[0.18em] uppercase">
                 Unisex
