@@ -37,6 +37,10 @@
   --color-honey-foreground: var(--honey-foreground);
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
+  --color-wood: var(--wood);
+  --color-wood-foreground: var(--wood-foreground);
+  --color-ivory: var(--ivory);
+  --color-cream: var(--cream);
   --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
 }
@@ -68,6 +72,10 @@
   --honey-foreground: oklch(0.22 0.03 80);
   --ink: oklch(0.12 0.003 90);
   --ink-foreground: oklch(0.97 0.004 95);
+  --wood: oklch(0.42 0.055 62);
+  --wood-foreground: oklch(0.97 0.008 90);
+  --ivory: oklch(0.978 0.008 92);
+  --cream: oklch(0.955 0.016 90);
 
   --gradient-honey: linear-gradient(
     150deg,
