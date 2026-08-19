@@ -117,7 +117,7 @@ function Index() {
                 alt="SARKAR HEIR parfum bottle in white-honey glass"
                 width={1024}
                 height={1280}
-                className="w-full max-w-[280px] md:max-w-[380px]"
+                className="w-full max-w-[280px] mix-blend-multiply md:max-w-[380px]"
               />
             </div>
           </div>
@@ -250,7 +250,7 @@ function Index() {
                 width={1024}
                 height={1280}
                 loading="lazy"
-                className="w-full max-w-[240px]"
+                className="w-full max-w-[240px] mix-blend-multiply"
               />
             </div>
             <div>
