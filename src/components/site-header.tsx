@@ -25,7 +25,7 @@ export function SiteHeader() {
           Sarkar
         </Link>
         <a
-          href="#heir"
+          href="#product"
           className="bg-primary px-4 py-2 text-[11px] font-semibold tracking-[0.18em] text-primary-foreground uppercase transition-opacity hover:opacity-85"
         >
           Buy Now
