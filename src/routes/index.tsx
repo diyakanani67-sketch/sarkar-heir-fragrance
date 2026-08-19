@@ -73,34 +73,60 @@ const experience = [
   },
 ];
 
+function Eyebrow({ children, tone = "wood" }: { children: string; tone?: "wood" | "honey" }) {
+  return (
+    <p
+      className={`text-[10px] font-semibold tracking-brand uppercase ${
+        tone === "honey" ? "text-honey" : "text-wood"
+      }`}
+    >
+      {children}
+    </p>
+  );
+}
+
 function Index() {
   return (
-    <div className="min-h-screen bg-ivory">
+    <div className="min-h-screen overflow-x-hidden bg-ivory">
       <SiteHeader />
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="surface-honey absolute inset-x-0 top-0 h-1/2 opacity-60 md:hidden" />
-        <div className="relative mx-auto max-w-6xl px-5 pt-12 pb-16 md:grid md:min-h-[80vh] md:grid-cols-2 md:items-center md:gap-16 md:px-10 md:py-24">
-          <div className="order-2 mt-12 md:order-1 md:mt-0">
-            <p className="text-[10px] font-semibold tracking-brand text-wood uppercase">
-              New Signature · Sarkar
-            </p>
-            <h1 className="mt-5 font-display text-5xl leading-[0.9] font-bold tracking-tight uppercase sm:text-6xl md:text-7xl">
-              Sarkar
-              <span className="block text-honey">Heir</span>
+      <section className="border-b border-border bg-ivory">
+        <div className="mx-auto flex max-w-6xl flex-col px-6 pt-10 pb-14 md:grid md:grid-cols-[1fr_0.9fr] md:items-center md:gap-16 md:px-10 md:pt-20 md:pb-24 lg:gap-24">
+          {/* Product visual */}
+          <div className="order-1 md:order-2">
+            <div className="surface-honey relative mx-auto flex aspect-[4/5] w-full max-w-[300px] items-center justify-center px-8 py-8 sm:max-w-[340px] md:aspect-[4/5] md:max-w-none md:px-12">
+              <img
+                src={heirBottle}
+                alt="SARKAR HEIR parfum bottle in white-honey glass"
+                width={1024}
+                height={1280}
+                className="h-full w-auto max-w-full object-contain mix-blend-multiply"
+              />
+            </div>
+          </div>
+
+          {/* Copy */}
+          <div className="order-2 mt-10 md:order-1 md:mt-0">
+            <Eyebrow>New Signature</Eyebrow>
+            <h1 className="mt-4 font-display text-[2.75rem] leading-[0.92] font-bold tracking-tight uppercase sm:text-6xl md:text-[5rem]">
+              <span className="block text-muted-foreground/70 text-base font-semibold tracking-brand sm:text-lg md:text-xl">
+                Sarkar
+              </span>
+              <span className="mt-2 block">Heir</span>
             </h1>
-            <p className="mt-6 max-w-sm font-display text-lg leading-snug text-foreground italic md:text-xl">
+            <div className="mt-6 h-px w-14 bg-honey" />
+            <p className="mt-6 max-w-sm font-display text-lg leading-snug font-medium sm:text-xl">
               Sweetness that stays. Calmness that lingers.
             </p>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
+            <p className="mt-4 max-w-md text-[0.9375rem] leading-relaxed text-muted-foreground">
               A clean citrus opening melts into honey, then rests in creamy vanilla and warm
-              sandalwood — a fragrance built to feel calm on the skin, hour after hour.
+              sandalwood — built to feel calm on the skin, hour after hour.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
               <a
                 href="#story"
-                className="inline-flex justify-center bg-primary px-8 py-4 text-[11px] font-semibold tracking-[0.2em] text-primary-foreground uppercase transition-opacity hover:opacity-85"
+                className="inline-flex min-h-[3.25rem] items-center justify-center bg-primary px-8 text-[11px] font-semibold tracking-[0.2em] text-primary-foreground uppercase transition-opacity hover:opacity-85"
               >
                 Discover the Fragrance
               </a>
@@ -109,68 +135,51 @@ function Index() {
               </span>
             </div>
           </div>
-
-          <div className="order-1 md:order-2">
-            <div className="surface-honey relative mx-auto flex max-w-sm items-center justify-center px-6 py-10 shadow-soft md:max-w-none md:px-10 md:py-16">
-              <img
-                src={heirBottle}
-                alt="SARKAR HEIR parfum bottle in white-honey glass"
-                width={1024}
-                height={1280}
-                className="w-full max-w-[280px] mix-blend-multiply md:max-w-[380px]"
-              />
-            </div>
-          </div>
         </div>
       </section>
 
       {/* STORY */}
       <section id="story" className="border-b border-border bg-cream">
-        <div className="mx-auto max-w-3xl px-5 py-16 text-center md:px-10 md:py-28">
-          <p className="text-[10px] font-semibold tracking-brand text-wood uppercase">
-            The Fragrance
-          </p>
-          <h2 className="mt-6 font-display text-3xl leading-tight font-bold tracking-tight uppercase md:text-5xl">
+        <div className="mx-auto max-w-2xl px-6 py-20 text-center md:px-10 md:py-32">
+          <Eyebrow>The Fragrance</Eyebrow>
+          <h2 className="mt-6 font-display text-[1.75rem] leading-[1.1] font-bold tracking-tight uppercase sm:text-4xl md:text-5xl">
             A quiet kind of sweetness
           </h2>
-          <p className="mt-8 text-sm leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-8 text-[0.9375rem] leading-[1.85] text-muted-foreground md:text-base">
             HEIR begins where most sweet fragrances end. The first minutes are cool and clean —
             citrus, air, a little green. Then honey arrives, softened rather than sugared, and the
             composition turns inward. What remains is vanilla and sandalwood: creamy, woody and
             steady, close enough to feel personal.
           </p>
-          <p className="mt-6 text-sm leading-relaxed text-muted-foreground md:text-lg">
-            It is warm without weight, sweet without excess — the same Sarkar restraint, in a new
-            register.
+          <p className="mt-5 text-[0.9375rem] leading-[1.85] text-muted-foreground md:text-base">
+            Warm without weight, sweet without excess — the same Sarkar restraint, in a new register.
           </p>
         </div>
       </section>
 
       {/* NOTES */}
       <section id="notes" className="bg-ink text-ink-foreground">
-        <div className="mx-auto max-w-6xl px-5 py-16 md:px-10 md:py-28">
-          <p className="text-[10px] font-semibold tracking-brand text-honey uppercase">
-            The Notes
-          </p>
-          <h2 className="mt-5 max-w-xl font-display text-3xl leading-tight font-bold tracking-tight uppercase md:text-5xl">
+        <div className="mx-auto max-w-5xl px-6 py-20 md:px-10 md:py-32">
+          <Eyebrow tone="honey">The Notes</Eyebrow>
+          <h2 className="mt-5 max-w-xl font-display text-[1.75rem] leading-[1.1] font-bold tracking-tight uppercase sm:text-4xl md:text-5xl">
             Four movements
           </h2>
           <div className="mt-12 md:mt-16">
             {notes.map((n) => (
               <div
                 key={n.name}
-                className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 border-t border-ink-foreground/15 py-7 md:grid-cols-[5rem_1fr_1.4fr] md:gap-x-10 md:py-9"
+                className="grid grid-cols-[2rem_1fr] gap-x-4 border-t border-ink-foreground/15 py-7 md:grid-cols-[4rem_1fr_1.3fr] md:items-baseline md:gap-x-10 md:py-10"
               >
-                <span className="font-display text-sm text-honey/70">{n.step}</span>
-                <div>
+                <span className="font-display text-xs text-honey/70">{n.step}</span>
+                <div className="min-w-0">
                   <p className="text-[10px] font-semibold tracking-[0.2em] text-ink-foreground/45 uppercase">
                     {n.tier}
                   </p>
-                  <h3 className="mt-1 font-display text-2xl font-semibold uppercase md:text-3xl">
+                  <h3 className="mt-2 font-display text-xl leading-tight font-semibold uppercase sm:text-2xl md:text-3xl">
                     {n.name}
                   </h3>
                 </div>
-                <p className="col-start-2 max-w-md text-sm leading-relaxed text-ink-foreground/60 md:col-start-3 md:self-center">
+                <p className="col-start-2 mt-3 max-w-md text-sm leading-relaxed text-ink-foreground/60 md:col-start-3 md:mt-0">
                   {n.copy}
                 </p>
               </div>
@@ -182,17 +191,20 @@ function Index() {
 
       {/* EXPERIENCE */}
       <section className="border-b border-border bg-ivory">
-        <div className="mx-auto max-w-6xl px-5 py-16 md:px-10 md:py-28">
-          <h2 className="max-w-md font-display text-3xl leading-tight font-bold tracking-tight uppercase md:text-5xl">
-            How it wears
+        <div className="mx-auto max-w-5xl px-6 py-20 md:px-10 md:py-32">
+          <Eyebrow>How It Wears</Eyebrow>
+          <h2 className="mt-5 max-w-md font-display text-[1.75rem] leading-[1.1] font-bold tracking-tight uppercase sm:text-4xl md:text-5xl">
+            Three hours, three moods
           </h2>
-          <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-3 md:gap-12">
+          <div className="mt-12 grid gap-8 md:mt-16 md:grid-cols-3 md:gap-12">
             {experience.map((e) => (
               <div key={e.title} className="border-t border-foreground/15 pt-6">
                 <p className="text-[10px] font-semibold tracking-[0.2em] text-wood uppercase">
                   {e.phase}
                 </p>
-                <h3 className="mt-4 font-display text-xl font-semibold md:text-2xl">{e.title}</h3>
+                <h3 className="mt-4 font-display text-lg leading-snug font-semibold md:text-xl">
+                  {e.title}
+                </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.copy}</p>
               </div>
             ))}
@@ -201,37 +213,35 @@ function Index() {
       </section>
 
       {/* LONG-LASTING */}
-      <section className="border-b border-border">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:gap-16 md:px-10 md:py-28">
+      <section className="border-b border-border bg-cream">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 md:grid-cols-2 md:gap-20 md:px-10 md:py-32">
           <img
             src={heirPackaging}
             alt="SARKAR HEIR in the signature Sarkar matte black packaging"
             width={1440}
             height={960}
             loading="lazy"
-            className="w-full"
+            className="w-full object-cover"
           />
           <div>
-            <p className="text-[10px] font-semibold tracking-brand text-wood uppercase">
-              Built to Linger
-            </p>
-            <h2 className="mt-5 font-display text-3xl leading-tight font-bold tracking-tight uppercase md:text-5xl">
+            <Eyebrow>Built to Linger</Eyebrow>
+            <h2 className="mt-5 font-display text-[1.75rem] leading-[1.1] font-bold tracking-tight uppercase sm:text-4xl md:text-5xl">
               It stays with you
             </h2>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
-              Composed at extrait strength, HEIR is made to hold its shape through the day. The
-              sweetness fades gently rather than disappearing, leaving a soft woody warmth that
-              people notice when they are close to you — never before.
+            <p className="mt-6 max-w-md text-[0.9375rem] leading-relaxed text-muted-foreground">
+              Composed at extrait strength, HEIR holds its shape through the day. The sweetness
+              fades gently rather than disappearing, leaving a soft woody warmth noticed only by
+              those close to you.
             </p>
-            <ul className="mt-8 max-w-md space-y-3 text-sm">
+            <ul className="mt-8 max-w-md">
               {[
                 "Extrait concentration for a slow, even fade",
-                "Close, intimate trail rather than a loud projection",
+                "A close, intimate trail rather than loud projection",
                 "Lingers on fabric long after the skin has quieted",
               ].map((t) => (
-                <li key={t} className="flex gap-4 border-b border-border pb-3">
+                <li key={t} className="flex gap-4 border-b border-border py-4 first:border-t">
                   <span className="text-honey">—</span>
-                  <span className="text-muted-foreground">{t}</span>
+                  <span className="text-sm leading-relaxed text-muted-foreground">{t}</span>
                 </li>
               ))}
             </ul>
@@ -240,24 +250,22 @@ function Index() {
       </section>
 
       {/* PURCHASE */}
-      <section id="product" className="bg-cream">
-        <div className="mx-auto max-w-5xl px-5 py-16 md:px-10 md:py-28">
-          <div className="grid items-center gap-10 bg-background p-6 shadow-soft sm:p-10 md:grid-cols-2 md:gap-14 md:p-14">
-            <div className="surface-honey flex items-center justify-center px-6 py-10">
+      <section id="product" className="bg-ivory">
+        <div className="mx-auto max-w-5xl px-6 py-20 md:px-10 md:py-32">
+          <div className="grid items-center gap-10 border border-border bg-background p-6 sm:p-10 md:grid-cols-[0.85fr_1fr] md:gap-16 md:p-14">
+            <div className="surface-honey flex aspect-[4/5] items-center justify-center px-6 py-8">
               <img
                 src={heirBottle}
                 alt="SARKAR HEIR 100ml extrait de parfum bottle"
                 width={1024}
                 height={1280}
                 loading="lazy"
-                className="w-full max-w-[240px] mix-blend-multiply"
+                className="h-full w-auto object-contain mix-blend-multiply"
               />
             </div>
             <div>
-              <p className="text-[10px] font-semibold tracking-brand text-wood uppercase">
-                Sarkar Perfume
-              </p>
-              <h2 className="mt-4 font-display text-4xl font-bold tracking-tight uppercase md:text-5xl">
+              <Eyebrow>Sarkar Perfume</Eyebrow>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight uppercase sm:text-4xl md:text-5xl">
                 Heir
               </h2>
               <p className="mt-3 text-[11px] tracking-[0.18em] text-muted-foreground uppercase">
@@ -267,21 +275,24 @@ function Index() {
                 Fresh at the top, honeyed at the heart, warm and calming at the base. Unisex,
                 extrait strength, in the signature Sarkar bottle.
               </p>
-              <p className="mt-8 font-display text-3xl font-bold">{PRICE}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{VOLUME} · Incl. of all taxes</p>
+              <div className="mt-8 flex items-baseline gap-3 border-t border-border pt-6">
+                <p className="font-display text-3xl font-bold">{PRICE}</p>
+                <p className="text-xs text-muted-foreground">{VOLUME}</p>
+              </div>
               <a
                 href="#product"
-                className="mt-7 inline-flex w-full justify-center bg-primary px-8 py-4 text-[11px] font-semibold tracking-[0.2em] text-primary-foreground uppercase transition-opacity hover:opacity-85 sm:w-auto"
+                className="mt-6 inline-flex min-h-[3.25rem] w-full items-center justify-center bg-primary px-8 text-[11px] font-semibold tracking-[0.2em] text-primary-foreground uppercase transition-opacity hover:opacity-85 sm:w-auto"
               >
                 Shop HEIR
               </a>
+              <p className="mt-3 text-[11px] text-muted-foreground">Inclusive of all taxes</p>
             </div>
           </div>
         </div>
       </section>
 
       <footer className="bg-ink text-ink-foreground">
-        <div className="mx-auto max-w-6xl px-5 py-14 md:px-10 md:py-16">
+        <div className="mx-auto max-w-6xl px-6 py-14 md:px-10 md:py-16">
           <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
             <div>
               <p className="font-display text-lg font-bold tracking-brand uppercase">Sarkar</p>
