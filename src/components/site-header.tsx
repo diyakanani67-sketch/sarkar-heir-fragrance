@@ -11,11 +11,11 @@ export function SiteHeader() {
           <Link to="/" className="hover:text-honey">
             Home
           </Link>
-          <a href="#heir" className="hover:text-honey">
+          <a href="#story" className="hover:text-honey">
             Heir
           </a>
-          <a href="#collection" className="hover:text-honey">
-            Collection
+          <a href="#notes" className="hover:text-honey">
+            Notes
           </a>
         </nav>
         <Link
@@ -25,7 +25,7 @@ export function SiteHeader() {
           Sarkar
         </Link>
         <a
-          href="#heir"
+          href="#product"
           className="bg-primary px-4 py-2 text-[11px] font-semibold tracking-[0.18em] text-primary-foreground uppercase transition-opacity hover:opacity-85"
         >
           Buy Now
