@@ -11,11 +11,11 @@ export function SiteHeader() {
           <Link to="/" className="hover:text-honey">
             Home
           </Link>
-          <a href="#heir" className="hover:text-honey">
+          <a href="#story" className="hover:text-honey">
             Heir
           </a>
-          <a href="#collection" className="hover:text-honey">
-            Collection
+          <a href="#notes" className="hover:text-honey">
+            Notes
           </a>
         </nav>
         <Link
