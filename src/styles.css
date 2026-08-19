@@ -78,12 +78,12 @@
   --cream: oklch(0.955 0.016 90);
 
   --gradient-honey: linear-gradient(
-    150deg,
-    oklch(0.99 0.012 95) 0%,
-    oklch(0.955 0.04 92) 45%,
-    oklch(0.86 0.1 86) 100%
+    165deg,
+    oklch(0.985 0.008 95) 0%,
+    oklch(0.965 0.024 92) 55%,
+    oklch(0.93 0.052 88) 100%
   );
-  --shadow-soft: 0 30px 60px -30px oklch(0.5 0.08 85 / 0.35);
+  --shadow-soft: 0 40px 80px -48px oklch(0.4 0.06 80 / 0.28);
 }
 
 @layer base {
