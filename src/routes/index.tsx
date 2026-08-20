@@ -1,5 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
+import {
+  LifestyleGallery,
+  Reviews,
+  Collection,
+  FinalCta,
+} from "@/components/heir-sections";
 import heirBottle from "@/assets/heir-bottle.jpg";
 import heirPackaging from "@/assets/heir-packaging.jpg";
 
@@ -157,6 +163,8 @@ function Index() {
         </div>
       </section>
 
+      <LifestyleGallery />
+
       {/* NOTES */}
       <section id="notes" className="bg-ink text-ink-foreground">
         <div className="mx-auto max-w-5xl px-6 py-20 md:px-10 md:py-32">
@@ -290,6 +298,10 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <Reviews />
+      <Collection />
+      <FinalCta />
 
       <footer className="bg-ink text-ink-foreground">
         <div className="mx-auto max-w-6xl px-6 py-14 md:px-10 md:py-16">
