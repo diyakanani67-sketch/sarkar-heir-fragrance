@@ -41,8 +41,8 @@
   --color-wood-foreground: var(--wood-foreground);
   --color-ivory: var(--ivory);
   --color-cream: var(--cream);
-  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-display: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -58,7 +58,7 @@
   --secondary: oklch(0.955 0.008 90);
   --secondary-foreground: oklch(0.16 0.004 90);
   --muted: oklch(0.955 0.008 90);
-  --muted-foreground: oklch(0.52 0.012 90);
+  --muted-foreground: oklch(0.43 0.012 90);
   --accent: oklch(0.93 0.035 90);
   --accent-foreground: oklch(0.24 0.03 80);
   --destructive: oklch(0.577 0.245 27.325);
@@ -96,6 +96,12 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
   }
 }
 

@@ -6,8 +6,8 @@ import {
   Collection,
   FinalCta,
 } from "@/components/heir-sections";
-import heirBottle from "@/assets/heir-bottle.jpg";
-import heirPackaging from "@/assets/heir-packaging.jpg";
+import heirBottleOptimized from "@/assets/heir-bottle-640.avif";
+import heirPackagingOptimized from "@/assets/heir-packaging-768.avif";
 
 // Price placeholder — edit here.
 const PRICE = "₹ 1,699";
@@ -29,6 +29,15 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "product" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      {
+        rel: "preload",
+        href: heirBottleOptimized,
+        as: "image",
+        type: "image/avif",
+        fetchPriority: "high",
+      },
     ],
   }),
   component: Index,
@@ -96,6 +105,7 @@ function Index() {
     <div className="min-h-screen overflow-x-hidden bg-ivory">
       <SiteHeader />
 
+      <main>
       {/* HERO */}
       <section className="border-b border-border bg-ivory">
         <div className="mx-auto flex max-w-6xl flex-col px-6 pt-10 pb-14 md:grid md:grid-cols-[1fr_0.9fr] md:items-center md:gap-16 md:px-10 md:pt-20 md:pb-24 lg:gap-24">
@@ -103,10 +113,12 @@ function Index() {
           <div className="order-1 md:order-2">
             <div className="surface-honey relative mx-auto flex aspect-[4/5] w-full max-w-[300px] items-center justify-center px-8 py-8 sm:max-w-[340px] md:aspect-[4/5] md:max-w-none md:px-12">
               <img
-                src={heirBottle}
+                src={heirBottleOptimized}
                 alt="SARKAR HEIR parfum bottle in white-honey glass"
-                width={1024}
-                height={1280}
+                width={640}
+                height={640}
+                fetchPriority="high"
+                decoding="async"
                 className="h-full w-auto max-w-full object-contain mix-blend-multiply"
               />
             </div>
@@ -224,11 +236,12 @@ function Index() {
       <section className="border-b border-border bg-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 md:grid-cols-2 md:gap-20 md:px-10 md:py-32">
           <img
-            src={heirPackaging}
+            src={heirPackagingOptimized}
             alt="SARKAR HEIR in the signature Sarkar matte black packaging"
-            width={1440}
-            height={960}
+            width={768}
+            height={768}
             loading="lazy"
+            decoding="async"
             className="w-full object-cover"
           />
           <div>
@@ -263,11 +276,12 @@ function Index() {
           <div className="grid items-center gap-10 border border-border bg-background p-6 sm:p-10 md:grid-cols-[0.85fr_1fr] md:gap-16 md:p-14">
             <div className="surface-honey flex aspect-[4/5] items-center justify-center px-6 py-8">
               <img
-                src={heirBottle}
+                src={heirBottleOptimized}
                 alt="SARKAR HEIR 100ml extrait de parfum bottle"
-                width={1024}
-                height={1280}
+                width={640}
+                height={640}
                 loading="lazy"
+                decoding="async"
                 className="h-full w-auto object-contain mix-blend-multiply"
               />
             </div>
@@ -302,6 +316,7 @@ function Index() {
       <Reviews />
       <Collection />
       <FinalCta />
+      </main>
 
       <footer className="bg-ink text-ink-foreground">
         <div className="mx-auto max-w-6xl px-6 py-14 md:px-10 md:py-16">

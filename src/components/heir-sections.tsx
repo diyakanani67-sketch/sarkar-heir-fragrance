@@ -1,12 +1,12 @@
-import lifeBedside from "@/assets/life-bedside.jpg";
-import lifeVanity from "@/assets/life-vanity.jpg";
-import lifeCandle from "@/assets/life-candle.jpg";
-import lifeShelf from "@/assets/life-shelf.jpg";
-import heirBottle from "@/assets/heir-bottle.jpg";
-import sarkarNoble from "@/assets/sarkar-noble.png";
-import sarkarOrion from "@/assets/sarkar-orion.png";
-import sarkarRegal from "@/assets/sarkar-regal.png";
-import sarkarThrone from "@/assets/sarkar-throne.png";
+import lifeBedside from "@/assets/life-bedside-576.avif";
+import lifeVanity from "@/assets/life-vanity-576.avif";
+import lifeCandle from "@/assets/life-candle-576.avif";
+import lifeShelf from "@/assets/life-shelf-576.avif";
+import heirBottle from "@/assets/heir-bottle-640.avif";
+import sarkarNoble from "@/assets/sarkar-noble-400.avif";
+import sarkarOrion from "@/assets/sarkar-orion-400.avif";
+import sarkarRegal from "@/assets/sarkar-regal-400.avif";
+import sarkarThrone from "@/assets/sarkar-throne-400.avif";
 
 const gallery = [
   { src: lifeBedside, alt: "SARKAR HEIR on a wooden bedside table beside an open book and linen sheets" },
@@ -99,6 +99,7 @@ export function LifestyleGallery() {
                 width={1024}
                 height={1280}
                 loading="lazy"
+                decoding="async"
                 className="aspect-[4/5] w-full object-cover"
               />
             </figure>
@@ -169,6 +170,7 @@ export function Collection() {
                   width={1000}
                   height={1000}
                   loading="lazy"
+                  decoding="async"
                   className={`h-full w-auto object-contain ${c.blend ? "mix-blend-multiply" : ""}`}
                 />
               </div>
@@ -181,7 +183,7 @@ export function Collection() {
                   href={c.href}
                   className="mt-5 inline-flex min-h-[2.75rem] items-center justify-center border border-foreground px-4 text-[10px] font-semibold tracking-[0.18em] uppercase transition-colors hover:bg-primary hover:text-primary-foreground"
                 >
-                  View Fragrance
+                  View {c.name}
                 </a>
               </div>
             </article>
